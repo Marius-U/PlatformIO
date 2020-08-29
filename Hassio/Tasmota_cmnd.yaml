@@ -1,0 +1,48 @@
+switch1/cmnd/POWER
+
+cmnd/switch2/POWER
+
+00:00:00 CFG: Loaded from flash at FA, Count 77
+00:00:00 Project tasmota Tasmota Version 7.2.0(tasmota)-2_6_1
+00:00:00 WIF: Connecting to AP1 ULM in mode 11N as switch1-6548...
+00:00:07 WIF: Connected
+00:00:07 HTP: Web server active on switch1-6548 with IP address 192.168.100.68
+20:26:41 MQT: Attempting connection...
+20:26:42 MQT: Connected
+20:26:42 MQT: switch1/tele/LWT = Online (retained)
+20:26:42 MQT: switch1/cmnd/POWER = 
+20:26:42 MQT: switch1/tele/INFO1 = {"Module":"Generic","Version":"7.2.0(tasmota)","FallbackTopic":"cmnd/DVES_75B994_fb/","GroupTopic":"tasmotas/cmnd/"}
+20:26:42 MQT: switch1/tele/INFO2 = {"WebServerMode":"Admin","Hostname":"switch1-6548","IPAddress":"192.168.100.68"}
+20:26:42 MQT: switch1/tele/INFO3 = {"RestartReason":"Software/System restart"}
+20:26:42 MQT: switch1/stat/RESULT = {"POWER":"OFF"}
+20:26:42 MQT: switch1/stat/POWER = OFF
+20:26:43 MQT: homeassistant/light/75B994_LI_1/config =  (retained)
+20:26:43 MQT: homeassistant/switch/75B994_RL_1/config = {"name":"Tasmota","cmd_t":"~cmnd/POWER","stat_t":"~tele/STATE","val_tpl":"{{value_json.POWER}}","pl_off":"OFF","pl_on":"ON","avty_t":"~tele/LWT","pl_avail":"Online","pl_not_avail":"Offline","uniq_id":"75B994_RL_1","device":{"identifiers":["75B994"],"connections":[["mac","84:0D:8E:75:B9:94"]]},"~":"switch1/"} (retained)
+20:26:43 MQT: homeassistant/light/75B994_LI_2/config =  (retained)
+20:26:43 MQT: homeassistant/switch/75B994_RL_2/config =  (retained)
+20:26:43 MQT: homeassistant/light/75B994_LI_3/config =  (retained)
+20:26:43 MQT: homeassistant/switch/75B994_RL_3/config =  (retained)
+20:26:43 MQT: homeassistant/light/75B994_LI_4/config =  (retained)
+20:26:43 MQT: homeassistant/switch/75B994_RL_4/config =  (retained)
+20:26:43 MQT: homeassistant/light/75B994_LI_5/config =  (retained)
+20:26:43 MQT: homeassistant/switch/75B994_RL_5/config =  (retained)
+20:26:43 MQT: homeassistant/light/75B994_LI_6/config =  (retained)
+20:26:43 MQT: homeassistant/switch/75B994_RL_6/config =  (retained)
+20:26:43 MQT: homeassistant/light/75B994_LI_7/config =  (retained)
+20:26:43 MQT: homeassistant/switch/75B994_RL_7/config =  (retained)
+20:26:43 MQT: homeassistant/light/75B994_LI_8/config =  (retained)
+20:26:43 MQT: homeassistant/switch/75B994_RL_8/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_BTN_1/config = {"name":"Tasmota Button1","stat_t":"~stat/BUTTON1","avty_t":"~tele/LWT","pl_avail":"Online","pl_not_avail":"Offline","uniq_id":"75B994_BTN_1","device":{"identifiers":["75B994"],"connections":[["mac","84:0D:8E:75:B9:94"]]},"~":"switch1/","value_template":"{{value_json.STATE}}","pl_on":"TOGGLE","off_delay":1} (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_BTN_2/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_BTN_3/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_BTN_4/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_SW_1/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_SW_2/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_SW_3/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_SW_4/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_SW_5/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_SW_6/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_SW_7/config =  (retained)
+20:26:43 MQT: homeassistant/binary_sensor/75B994_SW_8/config =  (retained)
+20:26:43 MQT: homeassistant/sensor/75B994_status/config = {"name":"Tasmota status","stat_t":"~HASS_STATE","avty_t":"~LWT","frc_upd":true,"pl_avail":"Online","pl_not_avail":"Offline","json_attributes_topic":"~HASS_STATE","unit_of_meas":" ","val_tpl":"{{value_json['RSSI']}}","ic":"mdi:information-outline","uniq_id":"75B994_status","device":{"identifiers":["75B994"],"connections":[["mac","84:0D:8E:75:B9:94"]],"name":"Tasmota","model":"Generic","sw_version":"7.2.0(tasmota)","manufacturer":"Tasmota"},"~":"switch1/tele/"} (retained)
+20:26:46 MQT: switch1/tele/STATE = {"Time":"2020-01-06T20:26:46","Uptime":"0T00:00:15","UptimeSec":15,"Heap":28,"SleepMode":"Dynamic","Sleep":50,"LoadAvg":21,"MqttCount":1,"POWER":"OFF","Wifi":{"AP":1,"SSId":"ULM","BSSId":"18:C5:8A:A3:42:20","Channel":7,"RSSI":80,"Signal":-60,"LinkCount":1,"Downtime":"0T00:00:08"}}

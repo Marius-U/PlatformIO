@@ -1,0 +1,47 @@
+mqtt:
+  discovery: true
+  broker: 192.168.100.243:1883
+  username: Marius
+  password: Lotus1994
+  
+
+#panel_iframe: #!include panel_iframe.yaml
+#  esphome:
+#    title: ESPHome
+#    icon: mdi:chip
+#    url: http://192.168.100.243:6052
+#  configurator:
+#    title: Configurator
+#    icon: mdi:wrench
+#    url: http://192.168.100.243:3218
+
+#cover:
+#  - platform: template
+#    covers:
+#      garage_door:
+#        friendly_name: "Garage Door"
+#        value_template: "{{ states('sensor.garage_door')|float > 0 }}"
+#        open_cover:
+#          service: script.open_garage_door
+#        close_cover:
+#          service: script.close_garage_door
+#        stop_cover:
+#          service: script.stop_garage_door
+
+#mqtt:
+#    discovery: true
+#    broker: 192.168.100.17:1883
+   # username: Marius
+    #password: Lotus1994
+
+
+switch:
+    platform: mqtt
+    name: "NodeMcu"
+    state_topic: "stat/sonoff/POWER"
+    command_topic: "cmnd/sonoff/POWER"
+    payload_on: "ON"
+    payload_off: "OFF"
+    optimistic: false
+    qos: 1
+    retain: true

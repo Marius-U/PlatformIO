@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "..\\Git\\L_Project"
+		},
+		{
+			"name": "Licenta",
+			"path": "..\\..\\..\\Users\\mungurea\\Documents\\PlatformIO\\Projects\\Licenta"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"xhash": "cpp",
+			"xutility": "cpp"
+		}
+	}
+}
