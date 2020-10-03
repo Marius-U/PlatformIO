@@ -1,5 +1,89 @@
 #include <Arduino.h>
 
+#define encoder0PinA  2
+#define encoder0PinB  3
+
+void ICACHE_RAM_ATTR doEncoderA(void);
+void ICACHE_RAM_ATTR doEncoderB(void);
+
+volatile unsigned ICACHE_RAM_ATTR int encoder0Pos = 0;
+
+void setup() {
+  pinMode(encoder0PinA, INPUT_PULLUP);
+  pinMode(encoder0PinB, INPUT_PULLUP);
+
+  // encoder pin on interrupt 0 (pin 2)
+  attachInterrupt(0, doEncoderA, CHANGE);
+
+  // encoder pin on interrupt 1 (pin 3)
+  attachInterrupt(1, doEncoderB, CHANGE);
+
+  Serial.begin (115200);
+}
+
+void loop() 
+{
+  static volatile int a = 0x00u;
+  a++;
+  if(0x1FFFFu == a)
+  {
+    Serial.println (encoder0Pos, HEX);
+    a = 0x00u;
+  }
+}
+
+void ICACHE_RAM_ATTR doEncoderA(void) {
+  // look for a low-to-high on channel A
+  if (digitalRead(encoder0PinA) == HIGH) {
+
+    // check channel B to see which way encoder is turning
+    if (digitalRead(encoder0PinB) == LOW) {
+      encoder0Pos = encoder0Pos + 1;         // CW
+    }
+    else {
+      encoder0Pos = encoder0Pos - 1;         // CCW
+    }
+  }
+
+  else   // must be a high-to-low edge on channel A
+  {
+    // check channel B to see which way encoder is turning
+    if (digitalRead(encoder0PinB) == HIGH) {
+      encoder0Pos = encoder0Pos + 1;          // CW
+    }
+    else {
+      encoder0Pos = encoder0Pos - 1;          // CCW
+    }
+  }
+}
+
+void ICACHE_RAM_ATTR doEncoderB(void) {
+  // look for a low-to-high on channel B
+  if (digitalRead(encoder0PinB) == HIGH) {
+
+    // check channel A to see which way encoder is turning
+    if (digitalRead(encoder0PinA) == HIGH) {
+      encoder0Pos = encoder0Pos + 1;         // CW
+    }
+    else {
+      encoder0Pos = encoder0Pos - 1;         // CCW
+    }
+  }
+
+  // Look for a high-to-low on channel B
+
+  else {
+    // check channel B to see which way encoder is turning
+    if (digitalRead(encoder0PinA) == LOW) {
+      encoder0Pos = encoder0Pos + 1;          // CW
+    }
+    else {
+      encoder0Pos = encoder0Pos - 1;          // CCW
+    }
+  }
+}
+
+#if 0
 void ICACHE_RAM_ATTR PinA(void);
 void ICACHE_RAM_ATTR PinB(void);
 
@@ -17,8 +101,8 @@ void setup()
   pinMode(pinA, INPUT_PULLUP); // set pinA as an input, pulled HIGH to the logic voltage (5V or 3.3V for most cases)
   pinMode(pinB, INPUT_PULLUP); // set pinB as an input, pulled HIGH to the logic voltage (5V or 3.3V for most cases)
 
-  attachInterrupt(0,PinA,RISING); // set an interrupt on PinA, looking for a rising edge signal and executing the "PinA" Interrupt Service Routine (below)
-  attachInterrupt(1,PinB,RISING); // set an interrupt on PinB, looking for a rising edge signal and executing the "PinB" Interrupt Service Routine (below)
+  attachInterrupt(pinA,PinA,RISING); // set an interrupt on PinA, looking for a rising edge signal and executing the "PinA" Interrupt Service Routine (below)
+  attachInterrupt(pinB,PinB,RISING); // set an interrupt on PinB, looking for a rising edge signal and executing the "PinB" Interrupt Service Routine (below)
 
   Serial.begin(115200); // start the serial monitor link
   Serial.println("Init done!");
@@ -77,6 +161,17 @@ void loop()
   if(oldEncPos != encoderPos) 
   {
     Serial.println(encoderPos);
+    
     oldEncPos = encoderPos;
   }
+#if 0
+  static volatile int a = 0x00u;
+  a++;
+  if(0xffff == a)
+  {
+    Serial.println("Main!");
+    a = 0x00u;
+  }
+#endif
 }
+#endif
