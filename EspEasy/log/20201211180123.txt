@@ -1,0 +1,78 @@
+######2020-12-11######
+#######0.04.007#######
+######FLASH INFO######
+BIN file: tasmota.bin
+COM port: (COM7) USB-SERIAL CH340 (Port_#0004.Hub_#0001)
+Baud rate: 115200
+######POST FLASH######
+No post flash information entered...
+######FLASH LOG######
+[esptool.exe -vv -cd nodemcu -cb 115200 -cp COM7 -ca 0x00000 -cf "D:\Data\Projects\PlatformIO\EspEasy\bin\tasmota.bin"]
+[11-Dec-20 6:01:27 PM] esptool v0.4.12 - (c) 2014 Ch. Klippel <ck@atelier-klippel.de>
+[11-Dec-20 6:01:27 PM] 	setting board to nodemcu
+[11-Dec-20 6:01:27 PM] 	setting baudrate from 115200 to 115200
+[11-Dec-20 6:01:27 PM] 	setting port from  to COM7
+[11-Dec-20 6:01:27 PM] 	setting address from 0x00000000 to 0x00000000
+[11-Dec-20 6:01:27 PM] 	espcomm_upload_file
+[11-Dec-20 6:01:27 PM] 	espcomm_upload_mem
+[11-Dec-20 6:01:27 PM] 	setting serial port timeouts to 1000 ms
+[11-Dec-20 6:01:27 PM] opening bootloader
+[11-Dec-20 6:01:27 PM] resetting board
+[11-Dec-20 6:01:27 PM] trying to connect
+[11-Dec-20 6:01:27 PM] 	flush start
+[11-Dec-20 6:01:27 PM] 	setting serial port timeouts to 1 ms
+[11-Dec-20 6:01:27 PM] 	setting serial port timeouts to 1000 ms
+[11-Dec-20 6:01:27 PM] 	flush complete
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: sending command header
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: sending command payload
+[11-Dec-20 6:01:27 PM] 	read 0, requested 1
+[11-Dec-20 6:01:27 PM] trying to connect
+[11-Dec-20 6:01:27 PM] 	flush start
+[11-Dec-20 6:01:27 PM] 	setting serial port timeouts to 1 ms
+[11-Dec-20 6:01:27 PM] 	setting serial port timeouts to 1000 ms
+[11-Dec-20 6:01:27 PM] 	flush complete
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: sending command header
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: sending command payload
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: receiving 2 bytes of data
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: receiving 2 bytes of data
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: receiving 2 bytes of data
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: receiving 2 bytes of data
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: receiving 2 bytes of data
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: receiving 2 bytes of data
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: receiving 2 bytes of data
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: receiving 2 bytes of data
+[11-Dec-20 6:01:27 PM] Uploading 611072 bytes from D:\Data\Projects\PlatformIO\EspEasy\bin\tasmota.bin to flash at 0x00000000
+[11-Dec-20 6:01:27 PM] 	erasing flash
+[11-Dec-20 6:01:27 PM] 	size: 095300 address: 000000
+[11-Dec-20 6:01:27 PM] 	first_sector_index: 0
+[11-Dec-20 6:01:27 PM] 	total_sector_count: 150
+[11-Dec-20 6:01:27 PM] 	head_sector_count: 16
+[11-Dec-20 6:01:27 PM] 	adjusted_sector_count: 134
+[11-Dec-20 6:01:27 PM] 	erase_size: 086000
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: sending command header
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: sending command payload
+[11-Dec-20 6:01:27 PM] 	setting serial port timeouts to 15000 ms
+[11-Dec-20 6:01:27 PM] 	setting serial port timeouts to 1000 ms
+[11-Dec-20 6:01:27 PM] 	espcomm_send_command: receiving 2 bytes of data
+[11-Dec-20 6:01:27 PM] 	writing flash
+[11-Dec-20 6:01:35 PM] ................................................................................ [ 13% ]
+[11-Dec-20 6:01:44 PM] ................................................................................ [ 26% ]
+[11-Dec-20 6:01:53 PM] ................................................................................ [ 40% ]
+[11-Dec-20 6:02:01 PM] ................................................................................ [ 53% ]
+[11-Dec-20 6:02:10 PM] ................................................................................ [ 67% ]
+[11-Dec-20 6:02:19 PM] ................................................................................ [ 80% ]
+[11-Dec-20 6:02:28 PM] ................................................................................ [ 93% ]
+[11-Dec-20 6:02:32 PM] .....................................                                            [ 100% ]
+[11-Dec-20 6:02:32 PM] starting app without reboot
+[11-Dec-20 6:02:32 PM] 	espcomm_send_command: sending command header
+[11-Dec-20 6:02:32 PM] 	espcomm_send_command: sending command payload
+[11-Dec-20 6:02:32 PM] 	espcomm_send_command: receiving 2 bytes of data
+[11-Dec-20 6:02:32 PM] closing bootloader
+[11-Dec-20 6:02:32 PM] 	flush start
+[11-Dec-20 6:02:32 PM] 	setting serial port timeouts to 1 ms
+[11-Dec-20 6:02:32 PM] 	setting serial port timeouts to 1000 ms
+[11-Dec-20 6:02:32 PM] 	flush complete
+[2020-12-11 18:02:32] DONE!
+############################
+[2020-12-11 18:02:32] The COM port was already in use... the post-flash did not complete.
+[2020-12-11 18:02:32] JOB COMPLETED, over and out!
