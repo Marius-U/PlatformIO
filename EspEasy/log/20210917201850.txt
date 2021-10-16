@@ -1,0 +1,19 @@
+######2021-09-17######
+#######0.04.007#######
+######FLASH INFO######
+BIN file: Programming only...
+COM port: (COM6) Silicon Labs CP210x USB to UART Bridge (Port_#0004.Hub_#0001)
+Baud rate: 115200
+! FORCED DOUT ENABLED !
+######POST FLASH######
+Unit name: 
+Unit number: 
+Admin password: 
+WiFi SSID 1: 
+WiFi password 1: 
+WiFi SSID 2: 
+WiFi password 2: 
+IP: <DHCP>
+######POST FLASH######
+############################
+[2021-09-17 20:18:51] JOB COMPLETED, over and out!
