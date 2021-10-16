@@ -5,6 +5,7 @@
 
 TFT_eSPI tft = TFT_eSPI();
 
+
 void CAN_Main();
 
 void setup(void) {
@@ -46,6 +47,7 @@ void loop()
   {
     //Cluster_Main();
     CAN_Main();
+
   }
   else
   {
@@ -58,6 +60,12 @@ void CAN_Main()
 {
   // try to parse packet
   int packetSize = CAN.parsePacket();
+
+  if(tft.getCursorY() > 270)
+  {
+    tft.setCursor(0,0,2);
+    tft.fillScreen(TFT_GREY);
+  }
 
   if (packetSize) {
     // received a packet
@@ -89,7 +97,8 @@ void CAN_Main()
 
       // only print packet data for non-RTR packets
       while (CAN.available()) {
-        DisplayPrint(tft, (char)CAN.read());       
+        DisplayPrint(tft, CAN.read(), HEX);   
+        DisplayPrint(tft, " ");     
       }
       DisplayWrite(tft, " ");
     }

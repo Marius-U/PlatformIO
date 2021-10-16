@@ -47,3 +47,7 @@ void DisplayPrint(TFT_eSPI &tft, long value, int base)
 {
     tft.print(value, base);
 }
+void DisplayPrint(TFT_eSPI &tft, int value, int base)
+{
+    tft.print(value, base);
+}

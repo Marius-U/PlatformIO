@@ -12,6 +12,7 @@ void DisplayWrite(TFT_eSPI &tft, const char *ifsh);
 void DisplayWrite(TFT_eSPI &tft, long value,int base);
 void DisplayWrite(TFT_eSPI &tft, int value);
 void DisplayPrint(TFT_eSPI &tft, long value, int base);
+void DisplayPrint(TFT_eSPI &tft, int value, int base);
 void DisplayPrint(TFT_eSPI &tft, int value);
 void DisplayPrint(TFT_eSPI &tft, char value);
 void DisplayPrint(TFT_eSPI &tft, const char* value);
