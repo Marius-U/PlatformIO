@@ -2,6 +2,7 @@
 #include <CAN.h>
 #include "Cluster.h"
 #include "Display.h"
+#include "UDS.h"
 
 TFT_eSPI tft = TFT_eSPI();
 
