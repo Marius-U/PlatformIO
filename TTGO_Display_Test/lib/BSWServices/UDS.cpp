@@ -27,8 +27,26 @@ void UDS_main()
 int8_t UDS_process()
 {
     int8_t retVal = ESP_OK;
-    //uint8_t pci = udsRxBuffer[0]; //Protocol Control Information -> DLC
-    uint8_t sid = udsRxBuffer[1]; //Service ID
+    uint8_t pci = udsRxBuffer[PCI]; //Protocol Control Information -> DLC
+    uint8_t sid = udsRxBuffer[SID]; //Service ID
+#if 0   
+    Serial.print(pci);
+    Serial.print(" ");
+    Serial.print(sid);
+    Serial.print(" ");
+    Serial.print(udsRxBuffer[2]);
+    Serial.print(" ");
+    Serial.print(udsRxBuffer[3]);
+    Serial.print(" ");
+    Serial.print(udsRxBuffer[4]);
+    Serial.print(" ");
+    Serial.print(udsRxBuffer[5]);
+    Serial.print(" ");
+    Serial.print(udsRxBuffer[6]);
+    Serial.print(" ");
+    Serial.print(udsRxBuffer[7]);
+    Serial.println("");
+#endif
     switch(sid)
     {
         case DIAGNOSTIC_SESION_CONTROL:
@@ -82,12 +100,12 @@ int8_t UDS_process()
     return retVal;
 }
 
-int8_t UDS_setRxBuffer(uint8_t *buffer)
+int8_t UDS_setRxBuffer(uint8_t buffer[])
 {
     int8_t retVal = ESP_FAIL;
     size_t size = (size_t)(sizeof(buffer)/sizeof(buffer[0]));
 
-    if (size <= (sizeof(udsRxBuffer))) 
+    if (size <= MAX_DLC) 
     {
         memcpy(udsRxBuffer, buffer, size);
         retVal = ESP_OK;
@@ -100,12 +118,12 @@ int8_t UDS_setRxBuffer(uint8_t *buffer)
     return retVal;
 }
 
-size_t  UDS_setTxBuffer(uint8_t *buffer)
+size_t  UDS_setTxBuffer(uint8_t buffer[])
 {
-        int8_t retVal = ESP_FAIL;
+    int8_t retVal = ESP_FAIL;
     size_t size = (size_t)(sizeof(buffer)/sizeof(buffer[0]));
 
-    if (size <= (sizeof(udsTxBuffer))) 
+    if (size <= MAX_DLC) 
     {
         memcpy(udsTxBuffer, buffer, size);
         retVal = ESP_OK;

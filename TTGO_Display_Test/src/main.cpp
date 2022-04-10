@@ -5,6 +5,7 @@
 #include "UDS.h"
 
 TFT_eSPI tft = TFT_eSPI();
+uint8_t rxData[8];
 
 
 void CAN_Main();
@@ -57,8 +58,22 @@ void loop()
   
 }
 
+void flushRxData()
+{
+  uint8_t index = 0x00u;
+  
+  for(index = 0x00u; index < (uint8_t)(sizeof(rxData)/sizeof(rxData[0])); index++)
+  {
+    rxData[index] = 0x00u;
+  }
+
+}
+
 void CAN_Main() 
 {
+  uint16_t receivedCANID = 0x0000u;
+  uint8_t index = 0x00u;
+
   // try to parse packet
   int packetSize = CAN.parsePacket();
 
@@ -68,21 +83,11 @@ void CAN_Main()
     tft.fillScreen(TFT_GREY);
   }
 
-  if (packetSize) {
-    // received a packet
-    //DisplayWrite(tft, "Received ");
-
-    if (CAN.packetExtended()) {
-      //DisplayWrite(tft, "extended ");
-    }
-
-    if (CAN.packetRtr()) {
-      // Remote transmission request, packet contains no data
-      DisplayWrite(tft, "RTR ");
-    }
-
+  if (packetSize) 
+  {
+    receivedCANID = CAN.packetId();
     DisplayPrint(tft, "ID: 0x");
-    DisplayPrint(tft, CAN.packetId(), HEX);        
+    DisplayPrint(tft, receivedCANID, HEX);        
 
     if (CAN.packetRtr()) 
     {
@@ -98,12 +103,25 @@ void CAN_Main()
 
       // only print packet data for non-RTR packets
       while (CAN.available()) {
-        DisplayPrint(tft, CAN.read(), HEX);   
-        DisplayPrint(tft, " ");     
+        rxData[index] = (uint8_t)CAN.read();
+        DisplayPrint(tft, (int)rxData[index], HEX);   
+        DisplayPrint(tft, " ");    
+        index++; 
       }
+      index = 0x00u;
+
+      if(UDS_REQUEST_ID == receivedCANID)
+      {
+        int8_t result = UDS_setRxBuffer(rxData);
+        UDS_process();
+        flushRxData();
+      }
+      else
+      {
+        flushRxData();
+      }
+
       DisplayWrite(tft, " ");
     }
-
-    //Serial.println();
   }
 }

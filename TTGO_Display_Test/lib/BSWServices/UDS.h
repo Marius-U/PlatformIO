@@ -8,8 +8,8 @@
 /*************MacroDefinitions***********/
 
 #define MAX_DLC 0x08u
-#define PCI     0x01u
-#define SID     0x02u
+#define PCI     0x00u
+#define SID     0x01u
 
 #define UDS_REQUEST_ID      0x100u
 #define UDS_RESPONSE_ID     0x101u
