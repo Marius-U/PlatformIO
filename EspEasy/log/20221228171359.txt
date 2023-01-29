@@ -1,0 +1,98 @@
+######2022-12-28######
+#######0.04.007#######
+######FLASH INFO######
+BIN file: tasmota.bin
+COM port: (COM6) FTDI USB Serial Port (Port_#0001.Hub_#0006)
+Baud rate: 921600 **RECOMMENDED MAX BAUD RATE IS 115200!**
+######POST FLASH######
+No post flash information entered...
+######FLASH LOG######
+[esptool.exe -vv -cd nodemcu -cb 921600 -cp COM6 -ca 0x00000 -cf "D:\Data\Projects\PlatformIO\EspEasy\bin\tasmota.bin"]
+[28-Dec-22 5:14:09 PM] esptool v0.4.12 - (c) 2014 Ch. Klippel <ck@atelier-klippel.de>
+[28-Dec-22 5:14:09 PM] 	setting board to nodemcu
+[28-Dec-22 5:14:09 PM] 	setting baudrate from 115200 to 921600
+[28-Dec-22 5:14:09 PM] 	setting port from  to COM6
+[28-Dec-22 5:14:09 PM] 	setting address from 0x00000000 to 0x00000000
+[28-Dec-22 5:14:09 PM] 	espcomm_upload_file
+[28-Dec-22 5:14:09 PM] 	espcomm_upload_mem
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1000 ms
+[28-Dec-22 5:14:09 PM] opening bootloader
+[28-Dec-22 5:14:09 PM] resetting board
+[28-Dec-22 5:14:09 PM] trying to connect
+[28-Dec-22 5:14:09 PM] 	flush start
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1 ms
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1000 ms
+[28-Dec-22 5:14:09 PM] 	flush complete
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command header
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command payload
+[28-Dec-22 5:14:09 PM] 	serialport_receive_C0: 00 instead of C0
+[28-Dec-22 5:14:09 PM] trying to connect
+[28-Dec-22 5:14:09 PM] 	flush start
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1 ms
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1000 ms
+[28-Dec-22 5:14:09 PM] 	flush complete
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command header
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command payload
+[28-Dec-22 5:14:09 PM] 	read 0, requested 1
+[28-Dec-22 5:14:09 PM] trying to connect
+[28-Dec-22 5:14:09 PM] 	flush start
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1 ms
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1000 ms
+[28-Dec-22 5:14:09 PM] 	flush complete
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command header
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command payload
+[28-Dec-22 5:14:09 PM] 	read 0, requested 1
+[28-Dec-22 5:14:09 PM] resetting board
+[28-Dec-22 5:14:09 PM] trying to connect
+[28-Dec-22 5:14:09 PM] 	flush start
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1 ms
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1000 ms
+[28-Dec-22 5:14:09 PM] 	flush complete
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command header
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command payload
+[28-Dec-22 5:14:09 PM] 	serialport_receive_C0: 00 instead of C0
+[28-Dec-22 5:14:09 PM] trying to connect
+[28-Dec-22 5:14:09 PM] 	flush start
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1 ms
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1000 ms
+[28-Dec-22 5:14:09 PM] 	flush complete
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command header
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command payload
+[28-Dec-22 5:14:09 PM] 	read 0, requested 1
+[28-Dec-22 5:14:09 PM] trying to connect
+[28-Dec-22 5:14:09 PM] 	flush start
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1 ms
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1000 ms
+[28-Dec-22 5:14:09 PM] 	flush complete
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command header
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command payload
+[28-Dec-22 5:14:09 PM] 	read 0, requested 1
+[28-Dec-22 5:14:09 PM] resetting board
+[28-Dec-22 5:14:09 PM] trying to connect
+[28-Dec-22 5:14:09 PM] 	flush start
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1 ms
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1000 ms
+[28-Dec-22 5:14:09 PM] 	flush complete
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command header
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command payload
+[28-Dec-22 5:14:09 PM] 	serialport_receive_C0: 00 instead of C0
+[28-Dec-22 5:14:09 PM] trying to connect
+[28-Dec-22 5:14:09 PM] 	flush start
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1 ms
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1000 ms
+[28-Dec-22 5:14:09 PM] 	flush complete
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command header
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command payload
+[28-Dec-22 5:14:09 PM] 	serialport_receive_C0: 00 instead of C0
+[28-Dec-22 5:14:09 PM] trying to connect
+[28-Dec-22 5:14:09 PM] 	flush start
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1 ms
+[28-Dec-22 5:14:09 PM] 	setting serial port timeouts to 1000 ms
+[28-Dec-22 5:14:09 PM] 	flush complete
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command header
+[28-Dec-22 5:14:09 PM] 	espcomm_send_command: sending command payload
+[28-Dec-22 5:14:09 PM] 	read 0, requested 1
+[28-Dec-22 5:14:09 PM] warning: espcomm_sync failed
+[28-Dec-22 5:14:09 PM] error: espcomm_open failed
+[28-Dec-22 5:14:09 PM] error: espcomm_upload_mem failed
+[2022-12-28 17:14:09] STOPPED due to 2 errors! (try reset on the unit, then start a new flash attempt)
